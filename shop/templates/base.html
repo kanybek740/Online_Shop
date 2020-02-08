@@ -1,0 +1,115 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {%block title%}{%endblock%}
+<!--
+Neaty HTML Template
+http://www.templatemo.com/tm-501-neaty
+-->
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}"/>
+
+
+</head>
+<body>
+    <div class="container">
+            <div class="row">
+                <div class="tm-left-right-container">
+                    <!-- Left column: logo and menu -->
+                    <div class="tm-blue-bg tm-left-column">
+                        <div class="tm-logo-div text-xs-center">
+                            <img src="{% static 'images/tm-neaty-logo.png'%}" height="100" alt="Logo">
+                            <h1 class="tm-site-name">aVc</h1>
+                        </div>
+                        <nav class="tm-main-nav">
+                            <ul class="tm-main-nav-ul">
+                                <li class="tm-nav-item">
+                                    <a href="{% url 'shop:about'%}" class="tm-nav-item-link">О нас</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="{% url 'shop:product_list' %}" class="tm-nav-item-link">Каталог</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="{% url 'shop:cart_list' %}" class="tm-nav-item-link">Корзина</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="{% url 'upload' %}" class="tm-nav-item-link">Свой заказ</a>
+                                </li>
+                                <br><br>
+                                {% if user.is_authenticated %}
+                                <li class="tm-nav-item">
+                                    Привет, {{user.username}}</li>
+                                <li class="tm-nav-item">
+                                    <a href ="{% url 'logout' %}">Выйти</a>
+                                </li>
+                                {% else %}
+                                <li class="tm-nav-item">
+                                    <a href="{% url 'login' %}">Войти</a></li>
+                                <li class="tm-nav-item">
+                                    <a href= "{% url 'signup' %}">Регистрация</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div> <!-- Left column: logo and menu -->
+
+                    <!-- Right column: content -->
+                    <div class="tm-right-column">
+                        <figure>
+                            {%block figure%}{%endblock%}
+                        </figure>
+
+                        <div class="tm-content-div">
+                            <!-- Welcome section -->
+
+
+                            <!-- Gallery One section -->
+                            {%block section%} {%endblock%}
+                            <section id="welcome" class="tm-section">
+                                {%block content%}{%endblock%}
+                            </section>
+
+
+
+
+                            <!-- Contact Us section -->
+                            <section id="contact" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Как с нами связаться</h2></header>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                       <a href="https://www.instagram.com/avc.kg/" target="_parent">
+                                           <img src="{% static 'images/inst.png'%}" alt="Image" width="60"> inst/aVc.kg </a>
+                                    </div>
+
+                                    <div class="col-lg-6 tm-contact-right">
+                                        <p>
+                                         <img src="{% static 'images/whatsapp.png'%}" alt="Image" width="60"> +996 556 01 87 22
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </section>
+                            <footer>
+                                <p class="tm-copyright-p">&copy; <span class="tm-current-year">2017</span> aVc.kg
+
+                                | Designed by <a href="https://www.instagram.com/kapasel06/" target="_parent">Kaparova Asel</a></p>
+                            </footer>
+                        </div>
+
+                    </div> <!-- Right column: content -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+
+</body>
+</html>

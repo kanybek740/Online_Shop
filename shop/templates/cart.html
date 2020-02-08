@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block content%}
+    {%for purchase in carts%}
+        <h2>{{ purchase.product }}  {{purchase.count}} шт.</h2>
+        {{purchase.cost}} сом
+        <p><a href="{% url 'shop:delete_from_cart' purchase.pk%}">Удалить</a></p>
+    {%endfor%}
+        <h3>Итого: {{total}} сом</p>
+{%endblock%}

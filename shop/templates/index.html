@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block figure%}
+    <img src="{% static 'images/1.jpg'%}" alt="Header image" class="img-fluid">    
+{%endblock%}
+
+{%block section%}
+<section id="welcome" class="tm-section"></section>
+    <header>
+        <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Добро пожаловать в aVc</h2>
+    </header>
+    <p>Рады приветсовать Вас в aVc - хэндмейд мире полимерной глины. Здесь Вы можете ознакомиться с товаром, который мы Вам предлагаем: сережки, кулоны и значки. 
+    И все из полимерной глины! 
+    </p>
+    <p>Полимерная глина – это специально созданный материал, который лепится как пластилин, но при этом затвердевает в духовке при очень высоких температурах.
+Из такого материала можно создавать все что угодно, начиная от скульптур и заканчивая миниатюрами.</p>
+</section>
+<!-- About section -->
+<section id="about" class="tm-section">
+    <div class="row">                                                                
+        <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 push-lg-4 push-md-5">
+            <header>
+                <h2 class="tm-blue-text tm-section-title tm-margin-b-45">О нас</h2>
+            </header>
+            <p>Давайте знакомиться! Мы сестры и занимаемся лепкой из полимерной глины с 2016 года по сей день.</p>
+            <p>Меня зовут Асель. Мне 20 лет. Я учусь на программиста в Кыргызско-Германском Институте прикладной информатики (INAI). Но при этом люблю заниматься творчеством, подобным этому.</p>
+            <p>Я Салкын, мне 16 лет. С детсва любила создавать что-то интересное. Так сюда меня и занесло. Поэтому поступила учиться на дизайнера, чтобы на полном серьезе связать свою судьбу с творчеством.</p> 
+        </div>
+
+        <div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 pull-lg-8 pull-md-7 tm-about-img-container">
+            <img src="{% static 'images/2.jpg'%}" alt="Image" class="img-fluid">
+        </div>  
+    </div>                            
+</section>  
+
+{%endblock%}
